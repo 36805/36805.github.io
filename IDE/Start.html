@@ -3,6 +3,13 @@
 <head>
     <title>ROBLOX</title>
 </head>
+    <script>
+        function executeScript(scriptUrl) {
+            var RBXApp = new ActiveXObject("Roblox.App");
+            var Workspace = RBXApp.CreateGame(2);
+            Workspace.ExecScript("game:Load('" + scriptUrl + "');
+        }
+    </script>
 <body>
     <table border="1">
         <tr>
@@ -23,12 +30,5 @@
             </td>
         </tr>
     </table>
-    <script>
-        function executeScript(scriptUrl) {
-            var RBXApp = new ActiveXObject("Roblox.App");
-            var Workspace = RBXApp.CreateGame(2);
-            Workspace.ExecScript("game:Load('" + scriptUrl + "');
-        }
-    </script>
 </body>
 </html>
