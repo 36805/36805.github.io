@@ -3,25 +3,6 @@
 <head>
     <title>ROBLOX</title>
 </head>
-    
-var isIDE_ = 2;
-
-function isIDE()
-{
-    if (isIDE_==2)
-    {
-        try
-        {
-            isIDE_ = window.external.IsRobloxIDE;
-        }
-        catch (ex)
-        {
-            isIDE_ = false;
-        }
-    }
-    return isIDE_;
-}
-    
 <body>
     <table border="1">
         <tr>
@@ -42,10 +23,11 @@ function isIDE()
             </td>
         </tr>
     </table>
-
     <script>
         function executeScript(scriptUrl) {
-            window.external.CreateGame(scriptUrl);
+            var RBXApp = new ActiveXObject("Roblox.App");
+            var Workspace = RBXApp.CreateGame(2);
+            Workspace.ExecScript("game:Load('" + scriptUrl + "');
         }
     </script>
 </body>
