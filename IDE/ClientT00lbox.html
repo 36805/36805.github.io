@@ -3,24 +3,10 @@
 <head>
     <title>ROBLOX Zoom Control</title>
     <script>
-        function zoom() {
-            try {
-                var app = new ActiveXObject("Roblox.App");
-                app.ToggleZoom(window);
-
-                if (app.IsZoomed(window)) {
-                    console.log("Zoomed In");
-                    // Insert additional app logic if needed
-                } else {
-                    console.log("Zoomed Out");
-                    // Insert additional app logic if needed
-                }
-
-                app = app.NullDispatch;
-            } catch (e) {
-                alert("ActiveX is not supported or Roblox.App is not available.");
-            }
-        }
+function zoom() {
+    var RBXApp = new ActiveXObject("Roblox.App");
+    RBXApp.ToggleZoom(window);
+}
     </script>
 </head>
 <body>
